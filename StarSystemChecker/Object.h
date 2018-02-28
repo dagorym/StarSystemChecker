@@ -38,6 +38,8 @@ public:
 	void setPosition(Point p);
 	void setPosition(double x, double y, double z);
 
+	void printData() const;
+
 
 private:
 	// The name of the object

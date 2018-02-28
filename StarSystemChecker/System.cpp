@@ -5,6 +5,8 @@
  *      Author: tstephen
  */
 
+#include <iostream>
+
 #include "System.h"
 
 System::System() {
@@ -26,4 +28,11 @@ Object * System::getObject(std::string name) const {
 		itr++;
 	}
 	return NULL;
+}
+
+void System::printData() const{
+	for (ObjectPtrList::const_iterator itr = m_objects.begin();itr < m_objects.end();itr++){
+		(*itr)->printData();
+		std::cout << std::endl;
+	}
 }

@@ -19,6 +19,8 @@ public:
 	Object * getObject(int id) const { return m_objects[id]; }
 	Object * getObject(std::string name) const;
 
+	void printData() const;
+
 private:
 	// List of objects in the system.  Entry [0] should always be the star
 	ObjectPtrList m_objects;

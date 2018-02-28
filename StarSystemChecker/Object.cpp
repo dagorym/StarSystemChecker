@@ -5,6 +5,8 @@
  *      Author: tstephen
  */
 
+#include <iostream>
+
 #include "Object.h"
 
 Object::Object() {
@@ -32,4 +34,11 @@ void Object::setPosition(double x, double y, double z){
 	m_position.setX(x);
 	m_position.setY(y);
 	m_position.setZ(z);
+}
+
+void Object::printData() const{
+	std::cout << "Name: " << m_name << std::endl;
+	std::cout << "Mass: " << m_mass << std::endl;
+	std::cout << "Orbital Distance: " << m_position.getDistance(Point(0,0,0)) << std::endl;
+	std::cout << "Eccentricity: " << m_eccentricity << std::endl;
 }
