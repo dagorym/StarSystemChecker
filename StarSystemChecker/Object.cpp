@@ -22,6 +22,14 @@ Object::Object(std::string name, double mass, double sm, double e):
 }
 
 Object::~Object() {
-	// TODO Auto-generated destructor stub
 }
 
+void Object::setPosition(Point p){
+	m_position = p;
+}
+
+void Object::setPosition(double x, double y, double z){
+	m_position.setX(x);
+	m_position.setY(y);
+	m_position.setZ(z);
+}
