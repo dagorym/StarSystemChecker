@@ -6,13 +6,20 @@
  */
 
 #include "Point.h"
+#include <cmath>
 
 Point::Point() {
-	// TODO Auto-generated constructor stub
-
+	m_x = 0;
+	m_y = 0;
+	m_z = 0;
 }
 
 Point::~Point() {
-	// TODO Auto-generated destructor stub
 }
 
+double Point::getDistance( Point p ) const{
+	double dx = m_x - p.getX();
+	double dy = m_y - p.getY();
+	double dz = m_z - p.getZ();
+	return sqrt (dx*dx + dy*dy + dz*dz);
+}
