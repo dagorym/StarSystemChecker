@@ -14,6 +14,22 @@ Point::Point() {
 	m_z = 0;
 }
 
+Point::Point (const Point &p){
+	m_x = p.m_x;
+	m_y = p.m_y;
+	m_z = p.m_z;
+}
+
+Point & Point::operator = (const Point &p){
+	if (this != &p){
+		m_x = p.m_x;
+		m_y = p.m_y;
+		m_z = p.m_z;
+	}
+	return *this;
+}
+
+
 Point::~Point() {
 }
 

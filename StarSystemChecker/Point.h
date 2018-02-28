@@ -18,6 +18,11 @@ class Point {
 public:
 	Point();
 	Point(double x, double y, double z):m_x(x),m_y(y),m_z(z) {};
+	// copy constructor
+	Point(const Point &p);
+
+	Point & operator = (const Point &p);
+
 	virtual ~Point();
 
 	double getX() const { return m_x; }
