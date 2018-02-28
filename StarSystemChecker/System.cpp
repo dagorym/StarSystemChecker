@@ -8,11 +8,22 @@
 #include "System.h"
 
 System::System() {
-	// TODO Auto-generated constructor stub
 
 }
 
 System::~System() {
-	// TODO Auto-generated destructor stub
+	for (ObjectPtrList::iterator itr = m_objects.begin();itr < m_objects.end();itr++){
+		delete *itr;
+	}
 }
 
+Object * System::getObject(std::string name) const {
+	ObjectPtrList::const_iterator itr = m_objects.begin();
+	while (itr < m_objects.end()){
+		if (name == (*itr)->getName()){
+			return *itr;
+		}
+		itr++;
+	}
+	return NULL;
+}

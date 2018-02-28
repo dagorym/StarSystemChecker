@@ -42,16 +42,16 @@ public:
 private:
 	// The name of the object
 	std::string m_name;
-	// Size of the orbital semi-major axis in meters
-	double m_semiMajor;
 	// mass of the object in kilograms
 	double m_mass;
+	// Size of the orbital semi-major axis in meters
+	double m_semiMajor;
 	// orbital eccentricity
 	double m_eccentricity;
 	// Object's position
 	Point m_position;
 };
 
-typedef std::vector<Object> ObjectList;
+typedef std::vector<Object *> ObjectPtrList;
 
 #endif /* OBJECT_H_ */
