@@ -7,6 +7,7 @@
 
 
 #include "ConfigParser.h"
+#include "OrbitConfigurator.h"
 
 int main (int argc, char* argv[]){
 	//read in system configuration
@@ -20,6 +21,9 @@ int main (int argc, char* argv[]){
 
 	ConfigParser cp(&m_system);
 	cp.loadConfig("system_data.dat");
+
+	OrbitConfigurator oc;
+	oc.simpleSetup(m_system);
 
 	m_system.printData();
 
