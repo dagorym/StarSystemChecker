@@ -41,5 +41,6 @@ void Object::printData() const{
 	std::cout << "Mass: " << m_mass << std::endl;
 	std::cout << "Semi-major Axis: " << m_semiMajor << std::endl;
 	std::cout << "Orbital Distance: " << m_position.getDistance(Point(0,0,0)) << std::endl;
+	std::cout << "Orbital Speed: " << m_velocity.getDistance(Point(0,0,0)) << std::endl;
 	std::cout << "Eccentricity: " << m_eccentricity << std::endl;
 }

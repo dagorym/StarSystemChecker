@@ -50,8 +50,10 @@ private:
 	double m_semiMajor;
 	// orbital eccentricity
 	double m_eccentricity;
-	// Object's position
+	// Object's position (in meters)
 	Point m_position;
+	// Objects velocity (in meters per second)
+	Point m_velocity;
 };
 
 typedef std::vector<Object *> ObjectPtrList;
