@@ -37,6 +37,8 @@ public:
 	void setEcentricity(double e) { m_eccentricity = e; }
 	void setPosition(Point p);
 	void setPosition(double x, double y, double z);
+	void setVelocity(Point p);
+	void setVelocity(double x, double y, double z);
 
 	void printData() const;
 

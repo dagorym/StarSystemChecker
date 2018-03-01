@@ -38,6 +38,15 @@ void Object::setPosition(double x, double y, double z){
 	m_position.setY(y);
 	m_position.setZ(z);
 }
+void Object::setVelocity(Point p){
+	m_velocity = p;
+}
+
+void Object::setVelocity(double x, double y, double z){
+	m_velocity.setX(x);
+	m_velocity.setY(y);
+	m_velocity.setZ(z);
+}
 
 void Object::printData() const{
 	std::cout << "Name: " << m_name << std::endl;
