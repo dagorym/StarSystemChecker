@@ -6,8 +6,11 @@
  */
 
 #include <iostream>
+#include <cmath>
 
 #include "Object.h"
+
+const double PI = std::acos(-1.0);
 
 Object::Object() {
 	m_name="Unnamed";
@@ -41,6 +44,7 @@ void Object::printData() const{
 	std::cout << "Mass: " << m_mass << std::endl;
 	std::cout << "Semi-major Axis: " << m_semiMajor << std::endl;
 	std::cout << "Orbital Distance: " << m_position.getDistance(Point(0,0,0)) << std::endl;
+	std::cout << "Orbital Angle: " << std::atan2(m_position.getY(),m_position.getX())/PI*180. << std::endl;
 	std::cout << "Orbital Speed: " << m_velocity.getDistance(Point(0,0,0)) << std::endl;
 	std::cout << "Eccentricity: " << m_eccentricity << std::endl;
 }
