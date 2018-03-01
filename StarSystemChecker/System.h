@@ -15,8 +15,10 @@ public:
 	System();
 	virtual ~System();
 
+	const unsigned int getNumObjects() const { return m_objects.size(); }
+
 	void addObject(Object * o) { m_objects.push_back(o); }
-	Object * getObject(int id) const { return m_objects[id]; }
+	Object * getObject(unsigned int id) const { return m_objects[id]; }
 	Object * getObject(std::string name) const;
 
 	void printData() const;
