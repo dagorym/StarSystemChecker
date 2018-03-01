@@ -7,13 +7,13 @@
 
 #include "Integrator.h"
 
-Integrator::Integrator() {
+Integrator::Integrator():m_timeStep(300) {
 	// TODO Auto-generated constructor stub
 
 }
 
-Integrator::Integrator() {
-	// TODO Auto-generated constructor stub
+Integrator::Integrator(double t) {
+	m_timeStep = t;
 
 }
 
