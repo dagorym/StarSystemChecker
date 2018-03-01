@@ -1,4 +1,4 @@
-*Star System Checker
+# Star System Checker
 
 This program is designed to take in a simple description of a star
 system, compute initial positions and velocities for the objects,
