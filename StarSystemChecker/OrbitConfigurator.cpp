@@ -5,10 +5,13 @@
  *      Author: tstephen
  */
 
+#include <cstdlib>
+#include <ctime>
+
 #include "OrbitConfigurator.h"
 
 OrbitConfigurator::OrbitConfigurator() {
-	// TODO Auto-generated constructor stub
+	std::srand(time(NULL));  // need to set the random number generator for the orbital angles
 
 }
 
@@ -17,5 +20,6 @@ OrbitConfigurator::~OrbitConfigurator() {
 }
 
 void OrbitConfigurator::simpleSetup(System &s){
+
 
 }
