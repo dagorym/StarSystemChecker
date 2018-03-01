@@ -12,7 +12,16 @@ Integrator::Integrator() {
 
 }
 
+Integrator::Integrator() {
+	// TODO Auto-generated constructor stub
+
+}
+
 Integrator::~Integrator() {
 	// TODO Auto-generated destructor stub
 }
 
+int Integrator::Integrate(System &s){
+
+	return 0;
+}
