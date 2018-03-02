@@ -10,8 +10,8 @@
 #include <ctime>
 
 #include "OrbitConfigurator.h"
+#include "constants.h"
 
-const double G = 6.67408e-11;
 
 OrbitConfigurator::OrbitConfigurator() {
 	std::srand(time(NULL));  // need to set the random number generator for the orbital angles

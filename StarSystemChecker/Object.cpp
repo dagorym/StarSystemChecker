@@ -6,11 +6,9 @@
  */
 
 #include <iostream>
-#include <cmath>
 
 #include "Object.h"
-
-const double PI = std::acos(-1.0);
+#include "constants.h"
 
 Object::Object() {
 	m_name="Unnamed";
