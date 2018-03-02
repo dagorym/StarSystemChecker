@@ -21,7 +21,7 @@ Integrator::~Integrator() {
 	// TODO Auto-generated destructor stub
 }
 
-int Integrator::Integrate(System &s){
+int Integrator::integrate(System &s){
 
 	return 0;
 }

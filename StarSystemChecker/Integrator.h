@@ -42,7 +42,7 @@ public:
 	 * @author Tom Stephens
 	 * @date Created: March 1, 2018
 	 */
-	int Integrate(System &s);
+	int integrate(System &s);
 
 private:
 	// size of timestep to take during a single integration, in seconds. Default is 300.
