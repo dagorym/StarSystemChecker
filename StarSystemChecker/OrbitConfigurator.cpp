@@ -38,8 +38,8 @@ void OrbitConfigurator::simpleSetup(System &s){
 		// Note:  This should really include all the mass inside the orbit, not just the star
 		double oSpeed = sqrt(G*starMass/sm);
 		//now compute x & velocities based on angle
-		double vx = -oSpeed * std::cos(angle);
-		double vy = oSpeed * std::sin(angle);
+		double vx = oSpeed * std::sin(angle);
+		double vy = -oSpeed * std::cos(angle);
 		o->setVelocity(vx,vy,0.);
 	}
 
