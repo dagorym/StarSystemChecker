@@ -33,6 +33,9 @@ public:
 	void setX(double x) { m_x = x; }
 	void setY(double y) { m_y = y; }
 	void setZ(double z) { m_z = z; }
+	void addX(double x) { m_x += x; }
+	void addY(double y) { m_y += y; }
+	void addZ(double z) { m_z += z; }
 
 	/**
 	 * @brief Return distance to a given point
