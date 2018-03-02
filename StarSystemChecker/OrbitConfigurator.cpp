@@ -30,7 +30,7 @@ void OrbitConfigurator::simpleSetup(System &s){
 		Object *o = s.getObject(i);
 		double sm = o->getSemiMajor();
 		// determine random orbital angle and compute starting position
-		int angle = rand() % 360;
+		double angle = PI/180. * (rand() % 360);
 		double x = sm * std::cos(angle);
 		double y = sm * std::sin(angle);
 		o->setPosition(x,y,0.);
@@ -38,8 +38,8 @@ void OrbitConfigurator::simpleSetup(System &s){
 		// Note:  This should really include all the mass inside the orbit, not just the star
 		double oSpeed = sqrt(G*starMass/sm);
 		//now compute x & velocities based on angle
-		double vx = oSpeed * std::sin(angle);
-		double vy = -oSpeed * std::cos(angle);
+		double vx = -oSpeed * std::sin(angle);
+		double vy = oSpeed * std::cos(angle);
 		o->setVelocity(vx,vy,0.);
 	}
 
