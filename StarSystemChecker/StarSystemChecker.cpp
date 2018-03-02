@@ -5,14 +5,15 @@
  *      Author: Tom Stephens
  */
 
+#include <iostream>
 
 #include "ConfigParser.h"
 #include "OrbitConfigurator.h"
 #include "Integrator.h"
 
 const int STEP_SIZE = 300; // five minutes
-const int NSTEPS = 2000; //about a week
-//const int NSTEPS = 105192; //one year in 5 minute increments
+//const int NSTEPS = 20000; //about a week
+const int NSTEPS = 105192; //one year in 5 minute increments
 
 int main (int argc, char* argv[]){
 	//read in system configuration
@@ -35,6 +36,10 @@ int main (int argc, char* argv[]){
 	Integrator in(STEP_SIZE);
 	for (int i = 0; i < NSTEPS; i++){
 		in.integrate(m_system);
+//		std::cout << i << " " << m_system.getObject(1)->getPosition().getX()
+//				<< " " << m_system.getObject(1)->getPosition().getY()
+//				<< " " << m_system.getObject(1)->getVelocity().getX()
+//				<< " " << m_system.getObject(1)->getVelocity().getY() << std::endl;
 	}
 
 	m_system.printData();
