@@ -8,6 +8,11 @@
 
 #include "ConfigParser.h"
 #include "OrbitConfigurator.h"
+#include "Integrator.h"
+
+const int STEP_SIZE = 300; // five minutes
+const int NSTEPS = 2000; //about a week
+//const int NSTEPS = 105192; //one year in 5 minute increments
 
 int main (int argc, char* argv[]){
 	//read in system configuration
@@ -24,6 +29,13 @@ int main (int argc, char* argv[]){
 
 	OrbitConfigurator oc;
 	oc.simpleSetup(m_system);
+
+	m_system.printData();
+
+	Integrator in(STEP_SIZE);
+	for (int i = 0; i < NSTEPS; i++){
+		in.integrate(m_system);
+	}
 
 	m_system.printData();
 
