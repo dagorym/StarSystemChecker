@@ -40,27 +40,16 @@ int Integrator::integrate(System &s){
 		for (unsigned int j = i+1; j < s.getNumObjects(); j++){
 			o2 = s.getObject(j);
 			Point p2 = o2->getPosition();
-			// calculate mutual delta-v's on a & B
-			// First we need the forces (F=GMM/r^2)
-			double dx = p2.getX() - p1.getX();
-			double fx = tG/(dx*dx);
-			double dy = p2.getY() - p1.getY();
-			double fy = tG/(dy*dy);
-//			double dz = p2.getZ() - p1.getZ();
-//			double fz = tG/(dz*dz);
-			// add to object's velocity
-			double dv1 = fx*o2->getMass()*sgn(dx);
-			double dv2 = fx*o1->getMass()*-sgn(dx);
-			vList[i].addX(dv1);
-			vList[j].addX(dv2);
-			dv1 = fy*o2->getMass()*sgn(dy);
-			dv2 = fy*o1->getMass()*-sgn(dy);
-			vList[i].addY(dv1);
-			vList[j].addY(dv2);
-//			dv1 = fz*o2->getMass()*sgn(dz);
-//			dv2 = fz*o1->getMass()*-sgn(dz);
-//			vList[i].addZ(dv1);
-//			vList[j].addZ(dv2);
+			double angle = atan2(p2.getY()-p1.getY(),p2.getX()-p1.getX());
+			double d = p2.getDistance(p1);
+			double aFactor = tG/(d*d);
+			double f1 = aFactor * o2->getMass();
+			double f2 = aFactor * o1->getMass();
+			vList[i].addX(f1*cos(angle));
+			vList[j].addX(-f2*cos(angle));
+			vList[i].addY(f1*sin(angle));
+			vList[j].addY(-f2*sin(angle));
+
 		}
 		o1->setVelocity(vList[i]);
 	}
