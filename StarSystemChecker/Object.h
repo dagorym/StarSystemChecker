@@ -30,6 +30,7 @@ public:
 	double getMass() const { return m_mass; }
 	double getEccentricity() const { return m_eccentricity; }
 	Point getPosition() const {return m_position; }
+	Point getVelocity() const {return m_velocity; }
 
 	void setName(std::string n) { m_name = n; }
 	void setSemiMajor(double s) { m_semiMajor = s; }
