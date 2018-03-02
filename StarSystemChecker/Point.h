@@ -8,6 +8,8 @@
 #ifndef POINT_H_
 #define POINT_H_
 
+#include <vector>
+
 /**
  * @brief Class to hold 3D point
  *
@@ -48,5 +50,8 @@ private:
 	double m_y;
 	double m_z;
 };
+
+typedef std::vector<Point *> PointPtrList;
+typedef std::vector<Point> PointList;
 
 #endif /* POINT_H_ */
